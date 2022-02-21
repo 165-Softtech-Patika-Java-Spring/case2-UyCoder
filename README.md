@@ -1,5 +1,4 @@
 
-# Ödev Aşağıda belirtildiği şekilde tamamlandı
 ## isimlendirmeler
 - Ülke -> Country
 - Şehir -> City
