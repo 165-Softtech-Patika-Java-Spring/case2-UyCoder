@@ -17,9 +17,6 @@ import java.util.List;
  * @Created: 2/20/2022 02:04
  * @Email: AhmedBughra@gmail.com
  * @CreatedWith: IntelliJ IDEA
- * ----------------------------------------------------------------
- * 2.hafta pazar | part3 34:06  mushu yerdin bashlap yazimen......
- * -===============================================================
  */
 
 @RestController
