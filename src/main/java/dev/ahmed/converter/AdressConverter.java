@@ -2,6 +2,7 @@ package dev.ahmed.converter;
 
 import dev.ahmed.dto.AddressDto;
 import dev.ahmed.entity.Address;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +12,13 @@ import java.util.List;
  * @Email: AhmedBughra@gmail.com
  * @CreatedWith: IntelliJ IDEA
  */
+@Service
 public class AdressConverter {
     public List<AddressDto> convertToAdressDtoList(List<Address> addressList) {
 
         List<AddressDto> addressDtoList = new ArrayList<>();
         for (Address address : addressList) {
-
             AddressDto addressDto = convertToAdressDto(address);
-
             addressDtoList.add(addressDto);
         }
 
@@ -38,6 +38,5 @@ public class AdressConverter {
         addressDto.setApartmentNumber(address.getApartmentNumber());
         return addressDto;
     }
-
 
 }

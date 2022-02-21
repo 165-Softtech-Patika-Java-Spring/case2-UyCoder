@@ -15,6 +15,5 @@ public class SaveStreetRequestDto extends AddressDto{
     private String disctrict;
     private String neighborhood;
     private String street;
-    private int doorNumber;
-    private Long apartmentNumber;
+
 }

@@ -146,4 +146,42 @@ public class AddressService {
         return addressDto;
 
     }
+
+    public AddressDto update(SaveNeighborhoodRequestDto saveNeighborhoodRequestDto) {
+
+        controlIsAdressExist(saveNeighborhoodRequestDto);
+
+        Address address;
+        address = AdressMapper.INSTANCE.convertToAdress(saveNeighborhoodRequestDto);
+        addressEntitySerive.save(address);
+        AddressDto addressDto = AdressMapper.INSTANCE.convertToadressDto(address);
+        return addressDto;
+    }
+
+    private void controlIsAdressExist(SaveNeighborhoodRequestDto saveNeighborhoodRequestDto) {
+        Long id = saveNeighborhoodRequestDto.getId();
+        boolean isExist = addressEntitySerive.existsById(id);
+        if (!isExist){
+            throw new ItemNotFoundException(AddressMessage.CUSTOMER_ERROR_MESSAGE);
+        }
+    }
+
+    public AddressDto update(SaveStreetRequestDto saveStreetRequestDto) {
+        controlIsAdressExist(saveStreetRequestDto);
+
+        Address address;
+        address = AdressMapper.INSTANCE.convertToAdress(saveStreetRequestDto);
+        addressEntitySerive.save(address);
+        AddressDto addressDto = AdressMapper.INSTANCE.convertToadressDto(address);
+        return addressDto;
+
+    }
+
+    private void controlIsAdressExist(SaveStreetRequestDto saveStreetRequestDto) {
+        Long id = saveStreetRequestDto.getId();
+        boolean isExist = addressEntitySerive.existsById(id);
+        if (!isExist){
+            throw new ItemNotFoundException(AddressMessage.CUSTOMER_ERROR_MESSAGE);
+        }
+    }
 }

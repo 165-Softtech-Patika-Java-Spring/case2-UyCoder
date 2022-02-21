@@ -71,7 +71,7 @@ public class Controller {
 
     // 6 * Bir ile ait ilçeler sorgulanabilmelidir.
     @GetMapping("/province")
-    public ResponseEntity findAll() {
+    public ResponseEntity findAllProvince() {
         List<AddressDto> addressDtoList = addressDistrictEntitySerive.findAll();
         return new ResponseEntity(addressDtoList, HttpStatus.OK);
         }
@@ -91,8 +91,11 @@ public class Controller {
     }
 
     // 8 * Mahalle adını güncellenebilmelidir.
-//    @PostMapping("/neighborhood")
-
+    @PutMapping("/neighborhood")
+    public ResponseEntity updateNeighborhood(@RequestBody SaveNeighborhoodRequestDto saveNeighborhoodRequestDto){
+        AddressDto addressDto = addressService.update(saveNeighborhoodRequestDto);
+        return new ResponseEntity(addressDto, HttpStatus.OK);
+    }
 
     // 9 * Bir ilçeye ait mahalleler sorgulanabilmelidir.
     @GetMapping("/neighborhood")
@@ -103,13 +106,17 @@ public class Controller {
 
     // 10 * Sokak kaydedilebilmelidir.
     @PostMapping("/street")
-    public ResponseEntity saveCity(@RequestBody SaveStreetRequestDto saveStreetRequestDto) {
+    public ResponseEntity saveStreet(@RequestBody SaveStreetRequestDto saveStreetRequestDto) {
         AddressDto addressDto = addressService.save(saveStreetRequestDto);
         return new ResponseEntity(addressDto, HttpStatus.OK);
     }
 
     // 11 * Sokak adı güncellenebilmelidir.
-
+    @PutMapping
+    public ResponseEntity updateStreet(@RequestBody SaveStreetRequestDto saveStreetRequestDto){
+        AddressDto addressDto = addressService.update(saveStreetRequestDto);
+        return ResponseEntity.ok(RestResponse.of(addressDto));
+    }
 
 
     // 12 * Bir mahalleye ait sokaklar sorgulanabilmelidir.
@@ -128,11 +135,19 @@ public class Controller {
 
 
     // 14 * Adres silinebilmelidir.
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable Long id){
+        addressService.delete(id);
+        return ResponseEntity.ok(RestResponse.empty());
+    }
 
 
     // 15 * Id den adres bilgisi edinilebilmelidir.
-
+    @GetMapping
+    public ResponseEntity findAll(){
+        List<AddressDto> addressDtoList = addressService.findAll();
+        return ResponseEntity.ok(RestResponse.of(addressDtoList));
+    }
 
 
 
