@@ -51,8 +51,6 @@ public class Controller {
         return ResponseEntity.ok(RestResponse.of(addressDto));
     }
 
-
-
     // 3 * Şehir kaydedilebilmelidir.
     @PostMapping("/city")
     public ResponseEntity saveCity(@RequestBody SaveCityRequestDto saveCityRequestDto) {
@@ -106,7 +104,6 @@ public class Controller {
         return new ResponseEntity(neighborhoodDtoList, HttpStatus.OK);
     }
 
-
     // 10 * Sokak kaydedilebilmelidir.
     @PostMapping("/street")
     public ResponseEntity saveCity(@RequestBody SaveStreetRequestDto saveStreetRequestDto) {
@@ -115,6 +112,8 @@ public class Controller {
     }
 
     // 11 * Sokak adı güncellenebilmelidir.
+
+
 
     // 12 * Bir mahalleye ait sokaklar sorgulanabilmelidir.
     @GetMapping("/street")
@@ -132,6 +131,9 @@ public class Controller {
 
 
     // 14 * Adres silinebilmelidir.
+
+
+
     // 15 * Id den adres bilgisi edinilebilmelidir.
 
 

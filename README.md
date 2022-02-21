@@ -10,15 +10,8 @@
 - Kapı No -> Door number
 - Daire No -> Apartment number
 
-## Controller
-- Spring annotation'larini kullanara controller class oluşturuldu.
-- Bu controller talepteki işlemler yapılabilmesi için @PostMapping ve @GetMapping kullanıldı.
 
-
-
-
-# Ödev talepleri
-## Case2
+# Case2 Ödev talepleri
 ### Adres Kayıt Sistemi:  
 Bir adreste bulunması gereken alanlar:  
 - Ülke 
