@@ -1,14 +1,32 @@
-# Case2
- 
-## Adres Kayıt Sistemi:  
+
+# Ödev Aşağıda belirtildiği şekilde tamamlandı
+## isimlendirmeler
+- Ülke -> Country
+- Şehir -> City
+- İl -> province
+- İlçe -> District
+- Mahalle -> Neighborhood
+- Sokak -> Street
+- Kapı No -> Door number
+- Daire No -> Apartment number
+
+## Controller
+- Spring annotation'larini kullanara controller class oluşturuldu.
+- Bu controller talepteki işlemler yapılabilmesi için @PostMapping ve @GetMapping kullanıldı.
+
+
+# Ödev talepleri
+## Case2
+### Adres Kayıt Sistemi:  
 Bir adreste bulunması gereken alanlar:  
 - Ülke 
--  Şehir 
--  İlçe 
--  Mahalle 
--  Sokak 
--  Kapı No  
--  Daire No 
+- Şehir 
+- İlçe 
+- Mahalle 
+- Sokak 
+- Kapı No  
+- Daire No 
+
 Bir adet controller yazınız(Tek controller yeterli). Bu controller içerisinde aşağıdaki işlemler yapılabilmelidir.  
 1. Ülke kaydedilebilmelidir. 
 2. Ülke kodundan ülke sorgulanabilmelidir. 
